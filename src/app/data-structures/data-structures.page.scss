@@ -1,0 +1,15 @@
+.heterogeneous-struct-example {
+  margin-bottom: .5rem;
+}
+
+.heterogeneous-struct-example table * {
+  max-width: 120px;
+  background-color: #fff;
+  color: #000;
+  border-style: solid;
+  border-color: #000;
+  border-width: 1.5px;
+  text-align: center;
+  font-weight: bold;
+  padding: .25rem 0;
+}

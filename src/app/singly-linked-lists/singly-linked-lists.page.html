@@ -1,0 +1,77 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-button routerLink="/home">
+      <ion-icon name="chevron-back-outline" size="medium"></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">singly-linked-lists</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <section class="page-content">
+    <ion-icon name="link-outline" size="large"></ion-icon>
+    <h1> Singly Linked Lists </h1>
+    <p>
+      Imagine a queue. In this queue, each person has their own
+      characteristics (data) and a coordinate to represent their
+      positions. The coordenate is unknown, so they hold each
+      other's hands, this is a <code>"pointer"</code> to their location.
+    </p>
+    <p>
+      Knowing the pointer, turns up possible to rearrange the nodes
+      (person) of the queue easily. It's great for situations where
+      you need to add or remove elements often.
+    </p>
+    <div class="linked-list-visualization">
+      <ion-grid>
+        <ion-row>
+          <ion-col class="center-title">
+            <h2> Linked List Visualization</h2>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col class="center-content">
+            <div class="list-layout" size="auto" *ngFor=" let item of getList(); let i=index;">
+              <div class="list-label" *ngIf="i === 0">Head</div>
+              <div class="list-label" *ngIf="i === getList().length - 1 && getList().length > 1"> Tail </div>
+              <div class="list-item">{{i+1}}</div>
+            </div>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-button (click)="addAtFirst()"> Insert node at start </ion-button>
+          </ion-col>
+          <ion-col>
+            <ion-button (click)="addAtLast()"> Insert node at last</ion-button>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-button (click)="removeAtFirst()"> Remove node at start </ion-button>
+          </ion-col>
+          <ion-col>
+            <ion-button (click)="removeAtLast()"> Remove node at last </ion-button>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <p>
+            In singly lists, <code>"head"</code> refers to the first node
+            in the list and <code>"tail"</code> to the last node.
+          </p>
+        </ion-row>
+        <ion-row>
+          <p>
+            Each node contain a reference to the next node, except the tail,
+            which points to null (or, the end of the list).
+          </p>
+        </ion-row>
+      </ion-grid>
+    </div>
+    <ion-button routerLink="/stacks"> Next </ion-button>
+  </section>
+</ion-content>

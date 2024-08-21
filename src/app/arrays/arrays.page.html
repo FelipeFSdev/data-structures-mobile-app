@@ -1,0 +1,67 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-button routerLink="/home">
+      <ion-icon name="chevron-back-outline" size="medium"></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">arrays</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <section class="page-content">
+    <ion-icon name="file-tray-stacked-outline" size="large"></ion-icon>
+    <h1> Arrays </h1>
+    <p>
+      We can think of arrays as a jar or a box for storing some
+      different items (pieces of data) occupying only one place
+      in the shelf (computer memory).
+    </p>
+    <p>
+      Each programming language has its own way of declaring an
+      array, but they all work as the same way, like a queue that
+      its first index start at 0.
+    </p>
+    <div class="array-visualization">
+      <ion-grid [fixed]="true">
+        <ion-row>
+          <ion-col class="center-title">
+            <h2> Array Visualization </h2>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="auto">
+            <div class="array-layout" *ngFor="let item of getArray(); let i = index">
+              <div class="array-item">{{item}}</div>
+              <div class="array-index">index {{i}}</div>
+            </div>
+          </ion-col>
+        </ion-row>
+        <ion-row class="button-row">
+          <ion-col size=".5">
+            <ion-button expand="block" (click)="pushElement()">Push</ion-button>
+          </ion-col>
+          <ion-col size=".5">
+            <ion-button expand="block" (click)="popElement()">Pop</ion-button>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <p>
+            When you <code>"push"</code> an item into the array, you are adding it
+            as the last element.
+          </p>
+        </ion-row>
+        <ion-row>
+          <p>
+            When you <code>"pop"</code> an item off the array, you are removing
+            the last element.
+          </p>
+        </ion-row>
+      </ion-grid>
+    </div>
+    <ion-button routerLink="/singly-linked-lists"> Next </ion-button>
+  </section>
+</ion-content>

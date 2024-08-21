@@ -1,0 +1,66 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-button routerLink="/home">
+      <ion-icon name="chevron-back-outline" size="medium"></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">data-structures</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <section class="page-content">
+    <ion-icon name="dice" size="large"></ion-icon>
+    <h1> Data Structures </h1>
+    <p>
+      Branch of study that is responsible for studying how data is
+      organized in a computer to atend every different process request
+      and make it more efficient.
+    </p>
+    <p>
+      Data structures define how all data is accessed, its organization
+      and processing options, sharing and relating available data.
+    </p>
+    <p>
+      If we have the same data type on one structure, we can call it as
+      "homogeneous". As example, we have "vectors" and "matrices", or,
+      bringing it to the real world, a bookshelf.
+    </p>
+    <figure>
+      <img src="https://stecine.azureedge.net/repositorio/estruturas_dados_heterogeneas_v2/img/img_13.jpg"
+        alt="Image showing how a bookshelf uses vectors and matrices" />
+    </figure>
+    <p>
+      Conversely, heterogeneous structures have different data types,
+      such as an agenda or a registration form.
+    </p>
+    <div class="heterogeneous-struct-example">
+      <table>
+        <thead>
+          <tr>
+            <th scope="col"> Field </th>
+            <th scope="col"> Data Type </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row"> Number </th>
+            <td> Integer </td>
+          </tr>
+          <tr>
+            <th scope="row"> Name </th>
+            <td> String </td>
+          </tr>
+          <tr>
+            <th scope="row"> Birth date </th>
+            <td> Date </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <ion-button routerLink="/arrays"> Next </ion-button>
+  </section>
+</ion-content>
