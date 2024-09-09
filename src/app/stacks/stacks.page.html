@@ -1,6 +1,8 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>stacks</ion-title>
+    <ion-button routerLink="/home">
+      <ion-icon name="chevron-back-outline" size="medium"></ion-icon>
+    </ion-button>
   </ion-toolbar>
 </ion-header>
 
@@ -10,4 +12,50 @@
       <ion-title size="large">stacks</ion-title>
     </ion-toolbar>
   </ion-header>
+  <section class="page-content">
+    <ion-icon name="layers-outline" size="large"></ion-icon>
+    <h1> Stacks </h1>
+    <p>
+      Stacks are a specific list type that follows the
+      LIFO (Last-In-First-Out) principle, which means each
+      interaction with this structure is done from the top
+      to the bottom of the stack, just like a stack of books.
+    </p>
+    <p>
+      Useful when you need to reverse things or look at the
+      most recent addition first.
+    </p>
+    <div class="stack-visualization">
+      <ion-grid>
+        <ion-row>
+          <ion-col class="center-title">
+            <h2> Stack Visualization</h2>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <div class="border">
+              <div class="stack-layout" *ngFor="let item of getStack();">
+                <div class="stack-item">{{item}}</div>
+              </div>
+            </div>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-button class="align-button" (click)="addElement()"> Push </ion-button>
+          </ion-col>
+          <ion-col>
+            <ion-button class="align-button" (click)="removeElement()"> Pop </ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+    <p>
+      In the context of stacks, <code> "push" </code> refers to adding an item
+      to the top of the stack, while <code> "pop" </code> refers to removing an
+      item from the top.
+    </p>
+    <ion-button routerLink="/queues"> Next </ion-button>
+  </section>
 </ion-content>

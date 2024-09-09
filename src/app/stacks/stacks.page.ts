@@ -6,10 +6,31 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./stacks.page.scss'],
 })
 export class StacksPage implements OnInit {
+  private stack: Array<number> = []
+  private newElement: number = 0;
 
   constructor() { }
 
   ngOnInit() {
   }
 
+  public getStack(): Array<number> {
+    return this.stack;
+  }
+
+  public addElement(): Array<number> {
+    this.newElement += 1;
+    this.stack.unshift(this.newElement);
+
+    return this.stack;
+  }
+
+  public removeElement(): Array<number> {
+    if (this.newElement > 0) {
+      this.newElement -= 1;
+    }
+    this.stack.shift();
+
+    return this.stack;
+  }
 }

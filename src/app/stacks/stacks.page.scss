@@ -1,0 +1,31 @@
+ion-grid {
+  --ion-grid-columns: 1;
+}
+
+.border {
+  border-style: solid;
+  display: block;
+  height: 190px;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  align-content: end;
+}
+
+.stack-layout {
+  margin: 5px;
+  text-align: center;
+}
+
+.stack-item {
+  width: auto;
+  font-weight: bold;
+  font-size: 20px;
+  background-color: #ff5a5f;
+  color: #fff;
+  padding: 7px;
+  border-radius: 10px;
+}
+
+.align-button {
+  display: flex;
+}
