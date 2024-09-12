@@ -1,6 +1,8 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>queues</ion-title>
+    <ion-button routerLink="/home">
+      <ion-icon name="chevron-back-outline" size="medium"></ion-icon>
+    </ion-button>
   </ion-toolbar>
 </ion-header>
 
@@ -10,4 +12,54 @@
       <ion-title size="large">queues</ion-title>
     </ion-toolbar>
   </ion-header>
+  <section class="page-content">
+    <ion-icon name="swap-horizontal-outline" size="large"></ion-icon>
+    <h1> Queues </h1>
+    <p>
+      This type of structure is something like a line of people waiting to
+      order something in a coffee shop. The first person in line is the
+      first to get served.
+    </p>
+    <p>
+      Queues are useful to process data in the order they were added, following
+      the FIFO (First-In-First-Out) principle.
+    </p>
+    <div class="queue-visualization">
+      <ion-grid [fixed]="true">
+        <ion-row>
+          <ion-col class="center-title">
+            <h2> Queue Visualization</h2>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <div class="queue-layout" *ngFor="let item of getQueue()">
+              <div class="queue-item">{{item}}</div>
+            </div>
+          </ion-col>
+        </ion-row>
+        <ion-row class="button-row">
+          <ion-col size="auto">
+            <ion-button (click)="enqueue()"> Enqueue </ion-button>
+          </ion-col>
+          <ion-col size="auto">
+            <ion-button (click)="dequeue()"> Dequeue </ion-button>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <p>
+            You may notice that <code>"enqueue"</code> means to
+            add an element at the end of the queue.
+          </p>
+        </ion-row>
+        <ion-row>
+          <p>
+            However, <code>"dequeue"</code> means to remove
+            the element which is at the beginning of the queue.
+          </p>
+        </ion-row>
+      </ion-grid>
+    </div>
+    <ion-button routerLink="/insertion-sort"> Next </ion-button>
+  </section>
 </ion-content>

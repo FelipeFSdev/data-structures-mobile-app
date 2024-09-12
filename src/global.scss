@@ -44,6 +44,14 @@ ion-toolbar ion-button {
   --background: #f5b7a3;
 }
 
+ion-button {
+  font-weight: bolder;
+  --border-radius: .65rem;
+  --padding: .8rem;
+  --background: #f7c65e;
+  --color: #000;
+}
+
 .page-content {
   display: flex;
   flex-direction: column;
@@ -65,12 +73,4 @@ ion-toolbar ion-button {
 .page-content p {
   margin: .5rem;
   font-size: 16px;
-}
-
-ion-button {
-  font-weight: bolder;
-  --border-radius: .65rem;
-  --padding: .8rem;
-  --background: #f7c65e;
-  --color: #000;
 }
