@@ -52,6 +52,12 @@ ion-button {
   --color: #000;
 }
 
+.center-visualization {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
 .page-content {
   display: flex;
   flex-direction: column;
