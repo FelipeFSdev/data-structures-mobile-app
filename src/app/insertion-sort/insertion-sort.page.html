@@ -1,6 +1,8 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>insertion-sort</ion-title>
+    <ion-button routerLink="/home">
+      <ion-icon name="chevron-back-outline" size="medium"></ion-icon>
+    </ion-button>
   </ion-toolbar>
 </ion-header>
 
@@ -10,4 +12,52 @@
       <ion-title size="large">insertion-sort</ion-title>
     </ion-toolbar>
   </ion-header>
+  <section class="page-content">
+    <ion-icon name="archive-outline" size="large"></ion-icon>
+    <h1> Insertion Sort </h1>
+    <p>
+      When we talk about ordination, we try to order a
+      sequence of data in descending or ascending direction.
+    </p>
+    <p>
+      Imagine you're holding one deck of cards in one hand and
+      you want to sort them into your other hand. You start with
+      one card, considering it sorted. Then, you take the next
+      card and insert it into the correct position relative to
+      the first one, so they are sorted together.
+    </p>
+    <div class="sort-visualization">
+      <ion-grid [fixed]="true">
+        <ion-row>
+          <ion-col class="center-title">
+            <h2> Sort Visualization</h2>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col class="center-visualization">
+            <div class="queue-layout" *ngFor="let item of getList(); let i = index;">
+              <div class="queue-item">{{item}}</div>
+            </div>
+          </ion-col>
+        </ion-row>
+        <ion-row class="button-row">
+          <ion-col size="auto">
+            <ion-button *ngIf="getIsSorting() === false && getList()[0] === 83" (click)="ascendingSort()"> Sort
+            </ion-button>
+            <ion-button *ngIf="getIsSorting() === false && getList()[0] === 7" (click)="descendingSort()"> Sort
+            </ion-button>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <p>
+              This method is simple and works very well for a
+              small number of cards.
+            </p>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+    <ion-button routerLink="/bubble-sort">Next</ion-button>
+  </section>
 </ion-content>
