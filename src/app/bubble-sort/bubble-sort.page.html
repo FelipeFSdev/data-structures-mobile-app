@@ -1,6 +1,8 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>bubble-sort</ion-title>
+    <ion-button routerLink="/home">
+      <ion-icon name="chevron-back-outline" size="medium"></ion-icon>
+    </ion-button>
   </ion-toolbar>
 </ion-header>
 
@@ -10,4 +12,39 @@
       <ion-title size="large">bubble-sort</ion-title>
     </ion-toolbar>
   </ion-header>
+  <section class="page-content">
+    <ion-icon name="swap-vertical-outline" size="large"></ion-icon>
+    <h2> Bubble Sort </h2>
+    <p>
+      Just like the insertion sort, this method is very useful
+      to order small lists.
+    </p>
+    <p>
+      Imagine a line with people of different heights. If we were to
+      order these people from shortest to tallest, we could only compare
+      and swap the people who are standing next to each other.
+    </p>
+    <div>
+      <ion-grid>
+        <ion-row>
+          <ion-col class="center-title">
+            <h2>Sort Visualization</h2>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col class="center-visualization">
+            <div class="sort-layout" *ngFor="let item of getList();">
+              <div class="sort-item">{{item}}</div>
+            </div>
+          </ion-col>
+        </ion-row>
+        <ion-row class="button-row" size="auto">
+          <ion-button *ngIf="getIsSorting() === false && getList()[0] === 83" (click)="ascendingSort()">
+            Sort</ion-button>
+          <ion-button *ngIf="getIsSorting() === false && getList()[0] === 7" (click)="descendingSort()">
+            Sort</ion-button>
+        </ion-row>
+      </ion-grid>
+    </div>
+  </section>
 </ion-content>

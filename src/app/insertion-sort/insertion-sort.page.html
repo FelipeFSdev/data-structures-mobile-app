@@ -26,7 +26,7 @@
       card and insert it into the correct position relative to
       the first one, so they are sorted together.
     </p>
-    <div class="sort-visualization">
+    <div>
       <ion-grid [fixed]="true">
         <ion-row>
           <ion-col class="center-title">
@@ -35,8 +35,8 @@
         </ion-row>
         <ion-row>
           <ion-col class="center-visualization">
-            <div class="queue-layout" *ngFor="let item of getList(); let i = index;">
-              <div class="queue-item">{{item}}</div>
+            <div class="sort-layout" *ngFor="let item of getList();">
+              <div class="sort-item">{{item}}</div>
             </div>
           </ion-col>
         </ion-row>
