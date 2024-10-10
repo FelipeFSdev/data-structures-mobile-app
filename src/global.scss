@@ -32,51 +32,190 @@
  * https://ionicframework.com/docs/theming/dark-mode
  */
 
-/* @import "@ionic/angular/css/palettes/dark.always.css"; */
+@import "@ionic/angular/css/palettes/dark.always.css";
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
-@import "@ionic/angular/css/palettes/dark.system.css";
+// @import "@ionic/angular/css/palettes/dark.system.css";
 
-ion-content {
-  --background: #f5b7a3;
+body[color-theme="light"] {
+  ion-content {
+    --background: #f5b7a3;
+  }
+
+  ion-toolbar {
+    --background: #f5b7a3;
+  }
+
+  ion-toolbar ion-button {
+    --background: #f7845e;
+  }
+
+  ion-button {
+    font-weight: bolder;
+    --border-radius: .65rem;
+    --padding: .8rem;
+    --background: #f7c65e;
+    --color: #000;
+  }
+
+  .side-menu ion-row ion-col {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: .5rem
+  }
+
+  .center-visualization {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .page-content {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    padding: 2rem 1rem;
+  }
+
+  .page-content img {
+    max-height: 130px;
+    max-width: 150px;
+  }
+
+  .page-content h1 {
+    font-size: 28px;
+    font-weight: bold;
+  }
+
+  .page-content p {
+    margin: .5rem;
+    font-size: 16px;
+  }
 }
 
-ion-toolbar ion-button {
-  --background: #f5b7a3;
+body[color-theme="dark"] {
+  ion-content {
+    --background: #383737;
+  }
+
+  ion-toolbar {
+    --background: #383737;
+  }
+
+  ion-card {
+    --color: #e0e0e0;
+    --background: #0f356e;
+  }
+
+  ion-toolbar ion-button {
+    --background: #f7845e;
+  }
+
+  ion-button {
+    font-weight: bolder;
+    --border-radius: .65rem;
+    --padding: .8rem;
+    --background: #d3aa53;
+    --color: #000;
+  }
+
+  .side-menu ion-row ion-col {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: .5rem
+  }
+
+  .center-visualization {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .page-content {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    padding: 2rem 1rem;
+  }
+
+  .page-content img {
+    max-height: 130px;
+    max-width: 150px;
+  }
+
+  .page-content h1 {
+    font-size: 28px;
+    font-weight: bold;
+  }
+
+  .page-content p {
+    margin: .5rem;
+    font-size: 16px;
+  }
 }
 
-ion-button {
-  font-weight: bolder;
-  --border-radius: .65rem;
-  --padding: .8rem;
-  --background: #f7c65e;
-  --color: #000;
-}
+// /* Estilos para o tema escuro */
+// body[color-theme="dark"] {
+//   ion-content {
+//     --background: #313030; /* Cor de fundo escuro */
 
-.center-visualization {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-}
+//   }
 
-.page-content {
-  display: flex;
-  flex-direction: column;
-  justify-items: center;
-  align-items: center;
-  padding: 2rem 1rem;
-}
+//   ion-toolbar ion-button {
+//     --background: #ff6600; /* Cor do botão no tema escuro */
+//     --border-color: #ff6a00; /* Cor da borda no tema escuro */
+//   }
 
-.page-content img {
-  max-height: 130px;
-  max-width: 150px;
-}
+//   ion-button {
+//     --background: #1302ff; /* Cor do botão no tema escuro */
+//     --color: #ffffff; /* Cor do texto no tema escuro */
+//     --border: 2px solid var(--border-color); /* Definindo a borda */
+//   }
+// }
 
-.page-content h1 {
-  font-size: 28px;
-  font-weight: bold;
-}
 
-.page-content p {
-  margin: .5rem;
-  font-size: 16px;
-}
+
+
+// body[color-theme="dark"] {
+//   /* Dark Mode - Cores para o Tema Escuro */
+//   --ion-background-color: #121212; /* Cor de fundo para o Dark Mode */
+//   --ion-text-color: #e0e0e0;       /* Cor de texto para o Dark Mode */
+
+//   --ion-color-primary: #bb86fc;
+//   --ion-color-primary-contrast: #ffffff;
+
+//   --ion-color-secondary: #03dac6;
+//   --ion-color-secondary-contrast: #000000;
+
+//   --ion-color-tertiary: #ffbb33;
+//   --ion-color-success: #03a078;
+//   --ion-color-warning: #ffd534;
+//   --ion-color-danger: #cf6679;
+//   --ion-color-dark: #1f1f1f;
+//   --ion-color-medium: #4a4a4a;
+//   --ion-color-light: #3a3a3a;
+
+//   /* Ajustes de fundo para componentes no Dark Mode */
+//   --ion-item-background: #ff9900;
+//   --ion-toolbar-background: rgb(255, 128, 0);
+//   --ion-card-background: #ff9900;
+// }
+
+
+// ion-card {
+//   background-color: var(--ion-card-background);
+//   color: var(--ion-text-color);
+// }
+
+// ion-toolbar {
+//   background-color: var(--ion-toolbar-background);
+//   color: var(--ion-text-color);
+// }
+
+// ion-button img {
+//   max-width: 10px; /* Ajuste o tamanho conforme necessário */
+//   max-height: 10px; /* Ajuste o tamanho conforme necessário */
+// }

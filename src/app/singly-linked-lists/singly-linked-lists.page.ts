@@ -11,6 +11,10 @@ export class SinglyLinkedListsPage implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    const theme: string | null = localStorage.getItem("color-theme");
+    theme
+      ? document.body.setAttribute("color-theme", theme)
+      : document.body.setAttribute("color-theme", "light");
   }
 
   public getList(): Array<number> {
