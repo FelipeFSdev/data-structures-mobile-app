@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SinglyLinkedListsPage implements OnInit {
   private list: Array<number> = [];
+  private newNumber: number = 1;
 
   constructor() { }
 
@@ -20,15 +21,16 @@ export class SinglyLinkedListsPage implements OnInit {
   public getList(): Array<number> {
     return this.list;
   }
+
   public addAtFirst(): Array<number> {
-    const newNumber: number = Math.floor(Math.random() * 100) + 1;
-    this.list.unshift(newNumber);
+    this.list.unshift(this.newNumber);
+    this.newNumber++
 
     return this.list;
   }
   public addAtLast(): Array<number> {
-    const newNumber: number = Math.floor(Math.random() * 100) + 1;
-    this.list.push(newNumber);
+    this.list.push(this.newNumber);
+    this.newNumber++
 
     return this.list;
   }

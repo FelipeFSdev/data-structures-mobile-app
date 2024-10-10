@@ -38,7 +38,7 @@
             <div class="list-layout" size="auto" *ngFor=" let item of getList(); let i=index;">
               <div class="list-label" *ngIf="i === 0">Head</div>
               <div class="list-label" *ngIf="i === getList().length - 1 && getList().length > 1"> Tail </div>
-              <div class="list-item">{{i+1}}</div>
+              <div class="list-item">{{item}}</div>
             </div>
           </ion-col>
         </ion-row>
