@@ -6,7 +6,8 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<!-- English page -->
+<ion-content [fullscreen]="true" [ngClass]="getLanguage()==='pt-br' ? 'ion-hide' : ''">
   <ion-header collapse="condense">
     <ion-toolbar>
       <ion-title size="large">bubble-sort</ion-title>
@@ -43,6 +44,50 @@
             Sort</ion-button>
           <ion-button *ngIf="getIsSorting() === false && getList()[0] === 7" (click)="descendingSort()">
             Sort</ion-button>
+        </ion-row>
+      </ion-grid>
+    </div>
+  </section>
+</ion-content>
+
+<!-- Página em português -->
+<ion-content [fullscreen]="true" [ngClass]="getLanguage()==='en-us' ? 'ion-hide' : ''">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">bubble-sort</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <section class="page-content">
+    <ion-icon name="swap-vertical-outline" size="large"></ion-icon>
+    <h2> Ordenação de bolha </h2>
+    <p>
+      Assim como a ordenação por inserção, este método é muito útil
+      para ordenar listas pequenas.
+    </p>
+    <p>
+      Imagine uma fila com pessoas de diferentes alturas. Se nós fôssemos
+      organizar estas pessoas do mais baixo para o mais alto, poderíamos
+      apenas comparar pessoas que estão lado a lado.
+    </p>
+    <div>
+      <ion-grid>
+        <ion-row>
+          <ion-col class="center-title">
+            <h2>Visualização da ordenação</h2>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col class="center-visualization">
+            <div class="sort-layout" *ngFor="let item of getList();">
+              <div class="sort-item">{{item}}</div>
+            </div>
+          </ion-col>
+        </ion-row>
+        <ion-row class="button-row" size="auto">
+          <ion-button *ngIf="getIsSorting() === false && getList()[0] === 83" (click)="ascendingSort()">
+            Ordenar</ion-button>
+          <ion-button *ngIf="getIsSorting() === false && getList()[0] === 7" (click)="descendingSort()">
+            Ordenar</ion-button>
         </ion-row>
       </ion-grid>
     </div>

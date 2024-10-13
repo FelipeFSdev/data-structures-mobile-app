@@ -34,4 +34,14 @@ export class QueuesPage implements OnInit {
 
     return this.queue;
   }
+
+  public getLanguage(): string {
+    const lang: string | null = localStorage.getItem("language");
+
+    if (lang) {
+      return lang;
+    } else {
+      return "";
+    }
+  }
 }

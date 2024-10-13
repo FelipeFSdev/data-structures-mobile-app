@@ -16,4 +16,13 @@ export class DataStructuresPage implements OnInit {
       : document.body.setAttribute("color-theme", "light");
   }
 
+  public getLanguage(): string {
+    const lang: string | null = localStorage.getItem("language");
+
+    if (lang) {
+      return lang;
+    } else {
+      return "";
+    }
+  }
 }

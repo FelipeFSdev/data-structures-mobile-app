@@ -34,4 +34,13 @@ export class ArraysPage implements OnInit {
     return this.array;
   }
 
+  public getLanguage(): string {
+    const lang: string | null = localStorage.getItem("language");
+
+    if (lang) {
+      return lang;
+    } else {
+      return "";
+    }
+  }
 }

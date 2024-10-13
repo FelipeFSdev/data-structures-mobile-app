@@ -75,4 +75,14 @@ export class InsertionSortPage implements OnInit {
   public delay(milisseconds: number): Promise<any> {
     return new Promise(resolve => setTimeout(resolve, milisseconds))
   }
+
+  public getLanguage(): string {
+    const lang: string | null = localStorage.getItem("language");
+
+    if (lang) {
+      return lang;
+    } else {
+      return "";
+    }
+  }
 }

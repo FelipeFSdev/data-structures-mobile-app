@@ -6,7 +6,8 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<!-- English page -->
+<ion-content [fullscreen]="true" [ngClass]="getLanguage()==='pt-br' ? 'ion-hide' : ''">
   <ion-header collapse="condense">
     <ion-toolbar>
       <ion-title size="large">stacks</ion-title>
@@ -57,5 +58,59 @@
       item from the top.
     </p>
     <ion-button routerLink="/queues"> Next </ion-button>
+  </section>
+</ion-content>
+
+<!-- Página em português -->
+<ion-content [fullscreen]="true" [ngClass]="getLanguage()==='en-us' ? 'ion-hide' : ''">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">stacks</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <section class="page-content">
+    <ion-icon name="layers-outline" size="large"></ion-icon>
+    <h1> Pilhas </h1>
+    <p>
+      Pilhas são um tipo específico de lista que segue o padrão
+      LIFO, sigla em inglês para "último a entrar, primeiro a sair".
+      Ou seja, qualquer interação com esta estrutura é feira de cima
+      para baixo, assim como uma pilha de livros.
+    </p>
+    <p>
+      Útil quando você precisa reverter coisas ou fazer buscas
+      a partir das adições mais recentes.
+    </p>
+    <div class="stack-visualization">
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <h2> Visualização da Pilha </h2>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <div class="border">
+              <div class="stack-layout" *ngFor="let item of getStack();">
+                <div class="stack-item">{{item}}</div>
+              </div>
+            </div>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-button class="align-button" (click)="addElement()"> Push </ion-button>
+          </ion-col>
+          <ion-col>
+            <ion-button class="align-button" (click)="removeElement()"> Pop </ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+    <p>
+      Ao falar sobre pilhas, <code>"push"</code> se refere a adicionar itens ao
+      topo da pilha, enquanto <code>"pop"</code> se refere a remover itens do topo.
+    </p>
+    <ion-button routerLink="/queues"> Próximo </ion-button>
   </section>
 </ion-content>

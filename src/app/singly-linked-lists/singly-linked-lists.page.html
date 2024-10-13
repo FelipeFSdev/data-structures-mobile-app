@@ -6,7 +6,8 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<!-- English page -->
+<ion-content [fullscreen]="true" [ngClass]="getLanguage()==='pt-br' ? 'ion-hide' : ''">
   <ion-header collapse="condense">
     <ion-toolbar>
       <ion-title size="large">singly-linked-lists</ion-title>
@@ -73,5 +74,77 @@
       </ion-grid>
     </div>
     <ion-button routerLink="/stacks"> Next </ion-button>
+  </section>
+</ion-content>
+
+<!-- Página em português -->
+<ion-content [fullscreen]="true" [ngClass]="getLanguage()==='en-us' ? 'ion-hide' : ''">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">singly-linked-lists</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <section class="page-content">
+    <ion-icon name="link-outline" size="large"></ion-icon>
+    <h1> Listas encadeadas simples </h1>
+    <p>
+      Imagine uma fila. Nesta fila, cada pessoa tem suas próprias
+      características (dados) e uma coordenada para representar suas
+      posições. As coordenadas são desconhecidas, então elas seguram
+      as mãos umas das outras. Isto é um <code>"ponteiro"</code> de
+      suas posições.
+    </p>
+    <p>
+      Conhecendo o ponteiro, é possível reorganizar os nós (pessoas)
+      da fila mais facilmente. Isto é ótimo para situações nas quais
+      você precisa adicionar ou remover elementos frequentemente.
+    </p>
+    <div class="linked-list-visualization">
+      <ion-grid>
+        <ion-row>
+          <ion-col class="center-title">
+            <h2> Visualização da Lista</h2>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col class="center-visualization">
+            <div class="list-layout" size="auto" *ngFor=" let item of getList(); let i=index;">
+              <div class="list-label" *ngIf="i === 0">Cabeça</div>
+              <div class="list-label" *ngIf="i === getList().length - 1 && getList().length > 1"> Cauda </div>
+              <div class="list-item">{{item}}</div>
+            </div>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-button (click)="addAtFirst()"> Inserir nó no início </ion-button>
+          </ion-col>
+          <ion-col>
+            <ion-button (click)="addAtLast()"> Inserir nó no final</ion-button>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-button (click)="removeAtFirst()"> Remover nó no início </ion-button>
+          </ion-col>
+          <ion-col>
+            <ion-button (click)="removeAtLast()"> Remover nó no final </ion-button>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <p>
+            Em listas simples, <code>"cabeça"</code> se refere ao primeiro nó
+            da lista e <code>"cauda"</code> se refere ao último.
+          </p>
+        </ion-row>
+        <ion-row>
+          <p>
+            Cada nó possui uma referência para o próximo nó, exceto a causa,
+            que aponta para <code>null</code> (ou, o final da lista).
+          </p>
+        </ion-row>
+      </ion-grid>
+    </div>
+    <ion-button routerLink="/stacks"> Próximo </ion-button>
   </section>
 </ion-content>

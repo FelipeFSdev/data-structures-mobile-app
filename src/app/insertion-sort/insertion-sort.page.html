@@ -6,7 +6,8 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<!-- English page -->
+<ion-content [fullscreen]="true" [ngClass]="getLanguage()==='pt-br' ? 'ion-hide' : ''">
   <ion-header collapse="condense">
     <ion-toolbar>
       <ion-title size="large">insertion-sort</ion-title>
@@ -59,5 +60,62 @@
       </ion-grid>
     </div>
     <ion-button routerLink="/bubble-sort">Next</ion-button>
+  </section>
+</ion-content>
+
+<!-- Página em inglês -->
+<ion-content [fullscreen]="true" [ngClass]="getLanguage()==='en-us' ? 'ion-hide' : ''">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">insertion-sort</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <section class="page-content">
+    <ion-icon name="archive-outline" size="large"></ion-icon>
+    <h1> Ordenação por Inserção </h1>
+    <p>
+      Quando falamos sobre ordenação, nós falamos de ordenar
+      uma sequência de dados em ordem crescente ou decrescente.
+    </p>
+    <p>
+      Imagine que você tá segurando um baralho em uma mão e quer
+      organizar as cartas na outra mão. Você começa com uma carta,
+      esta carta já está organizada. Então, você pega a próxima
+      carta e a insere na posição correta em relação à primeira.
+      Desta forma, as duas cartas estarão ordenadas.
+    </p>
+    <div>
+      <ion-grid [fixed]="true">
+        <ion-row>
+          <ion-col class="center-title">
+            <h2> Visualização da ordenação </h2>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col class="center-visualization">
+            <div class="sort-layout" *ngFor="let item of getList();">
+              <div class="sort-item">{{item}}</div>
+            </div>
+          </ion-col>
+        </ion-row>
+        <ion-row class="button-row">
+          <ion-col size="auto">
+            <ion-button *ngIf="getIsSorting() === false && getList()[0] === 83" (click)="ascendingSort()"> Ordenar
+            </ion-button>
+            <ion-button *ngIf="getIsSorting() === false && getList()[0] === 7" (click)="descendingSort()"> Ordenar
+            </ion-button>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <p>
+              Esse método é simples e funciona muito bem para
+              pequenas quantidades de cartas.
+            </p>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+    <ion-button routerLink="/bubble-sort">Próximo</ion-button>
   </section>
 </ion-content>

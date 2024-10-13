@@ -23,7 +23,7 @@
         </ion-col>
         <ion-col>
           <div>
-            <ion-select placeholder="Select">
+            <ion-select placeholder="Select" value="en-us" (ionChange)="changeLanguage($event)">
               <ion-select-option value="pt-br"> Português - BR </ion-select-option>
               <ion-select-option value="en-us"> English - US </ion-select-option>
             </ion-select>
@@ -44,7 +44,8 @@
     </ion-toolbar>
   </ion-header>
 
-  <ion-content [fullscreen]="true">
+  <!-- English page -->
+  <ion-content [fullscreen]="true" [ngClass]="getLanguage()==='pt-br' ? 'ion-hide' : ''">
     <ion-card>
       <ion-card-header>
         <ion-card-title> What data structures are? </ion-card-title>
@@ -99,6 +100,66 @@
       </ion-card-header>
       <ion-card-content>
         <ion-button routerLink="/bubble-sort"> Access Content </ion-button>
+      </ion-card-content>
+    </ion-card>
+  </ion-content>
+
+  <!-- Página em Português -->
+  <ion-content [fullscreen]="true" [ngClass]="getLanguage()==='en-us' ? 'ion-hide' : ''">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title> O que são estruturas de dados? </ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-button routerLink="/data-structures"> Acessar conteúdo </ion-button>
+      </ion-card-content>
+    </ion-card>
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title> Arrays </ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-button routerLink="/arrays"> Acessar conteúdo </ion-button>
+      </ion-card-content>
+    </ion-card>
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title> Listas encadeadas simples </ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-button routerLink="/singly-linked-lists"> Acessar conteúdo </ion-button>
+      </ion-card-content>
+    </ion-card>
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title> Pilhas </ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-button routerLink="/stacks"> Acessar conteúdo </ion-button>
+      </ion-card-content>
+    </ion-card>
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title> Filas </ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-button routerLink="/queues"> Acessar conteúdo </ion-button>
+      </ion-card-content>
+    </ion-card>
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title> Ordenação por inserção </ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-button routerLink="/insertion-sort"> Acessar conteúdo </ion-button>
+      </ion-card-content>
+    </ion-card>
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title> Ordenação de bolha </ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-button routerLink="/bubble-sort"> Acessar conteúdo </ion-button>
       </ion-card-content>
     </ion-card>
   </ion-content>

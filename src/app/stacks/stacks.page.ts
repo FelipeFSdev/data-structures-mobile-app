@@ -37,4 +37,14 @@ export class StacksPage implements OnInit {
 
     return this.stack;
   }
+
+  public getLanguage(): string {
+    const lang: string | null = localStorage.getItem("language");
+
+    if (lang) {
+      return lang;
+    } else {
+      return "";
+    }
+  }
 }

@@ -45,4 +45,13 @@ export class SinglyLinkedListsPage implements OnInit {
     return this.list;
   }
 
+  public getLanguage(): string {
+    const lang: string | null = localStorage.getItem("language");
+
+    if (lang) {
+      return lang;
+    } else {
+      return "";
+    }
+  }
 }

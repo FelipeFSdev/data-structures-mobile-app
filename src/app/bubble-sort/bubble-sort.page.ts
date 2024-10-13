@@ -75,4 +75,14 @@ export class BubbleSortPage implements OnInit {
     this.isSorting = false;
     return this.list;
   }
+
+  public getLanguage(): string {
+    const lang: string | null = localStorage.getItem("language");
+
+    if (lang) {
+      return lang;
+    } else {
+      return "";
+    }
+  }
 }

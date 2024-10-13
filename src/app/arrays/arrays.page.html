@@ -6,7 +6,8 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<!-- English page -->
+<ion-content [fullscreen]="true" [ngClass]="getLanguage()==='pt-br' ? 'ion-hide' : ''">
   <ion-header collapse="condense">
     <ion-toolbar>
       <ion-title size="large">arrays</ion-title>
@@ -22,7 +23,7 @@
     </p>
     <p>
       Each programming language has its own way of declaring an
-      array, but they all work as the same way, like a queue that
+      array, but they all work as the same way: like a queue that
       its first index start at 0.
     </p>
     <div class="array-visualization">
@@ -63,5 +64,66 @@
       </ion-grid>
     </div>
     <ion-button routerLink="/singly-linked-lists"> Next </ion-button>
+  </section>
+</ion-content>
+
+<!-- Página em português -->
+<ion-content [fullscreen]="true" [ngClass]="getLanguage()==='en-us' ? 'ion-hide' : ''">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">arrays</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <section class="page-content">
+    <ion-icon name="file-tray-stacked-outline" size="large"></ion-icon>
+    <h1> Arrays </h1>
+    <p>
+      Nós podemos pensar em arrays como um jarro ou uma caixa que
+      usamos pra guardar diferentes itens (dados) ocupando apenas
+      um espaço na prateleira (memória).
+    </p>
+    <p>
+      Cada linguagem de programação possui sua própria maneira de
+      declarar arrays, mas todas elas funcionam da mesma forma:
+      como uma fila, onde seu primeiro lugar começa no 0.
+    </p>
+    <div class="array-visualization">
+      <ion-grid [fixed]="true">
+        <ion-row>
+          <ion-col class="center-title">
+            <h2> Visualização do Array </h2>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col class="center-visualization">
+            <div class="array-layout" *ngFor="let item of getArray(); let i = index">
+              <div class="array-item">{{item}}</div>
+              <div class="array-index">index {{i}}</div>
+            </div>
+          </ion-col>
+        </ion-row>
+        <ion-row class="button-row">
+          <ion-col size=".5">
+            <ion-button expand="block" (click)="pushElement()">Push</ion-button>
+          </ion-col>
+          <ion-col size=".5">
+            <ion-button expand="block" (click)="popElement()">Pop</ion-button>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <p>
+            Quando você utiliza o <code>"push"</code>, quer dizer que você está
+            adicionando um elemento ao último lugar da fila, neste caso, o array.
+          </p>
+        </ion-row>
+        <ion-row>
+          <p>
+            O <code>"pop"</code>, por outro lado, significa retirar o último
+            elemento.
+          </p>
+        </ion-row>
+      </ion-grid>
+    </div>
+    <ion-button routerLink="/singly-linked-lists"> Próximo </ion-button>
   </section>
 </ion-content>

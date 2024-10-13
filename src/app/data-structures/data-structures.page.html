@@ -6,7 +6,8 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<!-- English page -->
+<ion-content [fullscreen]="true" [ngClass]="getLanguage()==='pt-br' ? 'ion-hide' : ''">
   <ion-header collapse="condense">
     <ion-toolbar>
       <ion-title size="large">data-structures</ion-title>
@@ -62,5 +63,66 @@
       </table>
     </div>
     <ion-button routerLink="/arrays"> Next </ion-button>
+  </section>
+</ion-content>
+
+<!-- Página em português -->
+<ion-content [fullscreen]="true" [ngClass]="getLanguage()==='en-us' ? 'ion-hide' : ''">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">data-structures</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <section class="page-content">
+    <ion-icon name="dice" size="large"></ion-icon>
+    <h1> Estruturas de Dados </h1>
+    <p>
+      Ramo de estudo responsável por estudar como dados são organizados
+      em um computador para atender a diferentes requisições de processo
+      e fazer isto de forma mais eficiente.
+    </p>
+    <p>
+      Estruturas de dados definem como todos os dados são acessados, sua
+      organização e opções de processamento, compartilhando e relacionando
+      os dados disponíveis.
+    </p>
+    <p>
+      Se nós tivermos o mesmo tipo de dado em uma estrutura, podemos dizer
+      que é uma estrutura homogênea. Como exemplo, temos "vetores" e matrizes.
+      Ou, trazendo para o mundo real, uma prateleira.
+    </p>
+    <figure>
+      <img src="https://stecine.azureedge.net/repositorio/estruturas_dados_heterogeneas_v2/img/img_13.jpg"
+        alt="Image showing how a bookshelf uses vectors and matrices" />
+    </figure>
+    <p>
+      Em contrapartida, estruturas heterogêneas possuem diferentes
+      tipos de dados, como uma agenda ou formulário de registro.
+    </p>
+    <div class="heterogeneous-struct-example">
+      <table>
+        <thead>
+          <tr>
+            <th scope="col"> Campo </th>
+            <th scope="col"> Tipo de Dado </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row"> Número </th>
+            <td> Integer </td>
+          </tr>
+          <tr>
+            <th scope="row"> Nome </th>
+            <td> String </td>
+          </tr>
+          <tr>
+            <th scope="row"> Nascimento </th>
+            <td> Date </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <ion-button routerLink="/arrays"> Próximo </ion-button>
   </section>
 </ion-content>

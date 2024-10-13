@@ -6,7 +6,8 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<!-- English page -->
+<ion-content [fullscreen]="true" [ngClass]="getLanguage()==='pt-br' ? 'ion-hide' : ''">
   <ion-header collapse="condense">
     <ion-toolbar>
       <ion-title size="large">queues</ion-title>
@@ -61,5 +62,65 @@
       </ion-grid>
     </div>
     <ion-button routerLink="/insertion-sort"> Next </ion-button>
+  </section>
+</ion-content>
+
+<!-- Página em português -->
+<ion-content [fullscreen]="true" [ngClass]="getLanguage()==='en-us' ? 'ion-hide' : ''">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">queues</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <section class="page-content">
+    <ion-icon name="swap-horizontal-outline" size="large"></ion-icon>
+    <h1> Filas </h1>
+    <p>
+      Este tipo de estrutura é semelhante a uma fila de pessoas esperando
+      para fazer um pedido em uma cafeteria. A primeira pessoa da fila é
+      a primeira a ser servida.
+    </p>
+    <p>
+      Filas são úteis para processar dados na ordem em que eles são
+      inseridos, seguindo o padrão FIFO, sigla em inglês para
+      "primeiro a entrar, primeiro a sair".
+    </p>
+    <div class="queue-visualization">
+      <ion-grid [fixed]="true">
+        <ion-row>
+          <ion-col class="center-title">
+            <h2> Visualização da Fila </h2>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col class="center-visualization">
+            <div class="queue-layout" *ngFor="let item of getQueue()">
+              <div class="queue-item">{{item}}</div>
+            </div>
+          </ion-col>
+        </ion-row>
+        <ion-row class="button-row">
+          <ion-col size="auto">
+            <ion-button (click)="enqueue()"> Enqueue </ion-button>
+          </ion-col>
+          <ion-col size="auto">
+            <ion-button (click)="dequeue()"> Dequeue </ion-button>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <p>
+            Você pode perceber que <code>"enqueue"</code> (ou enfileirar)
+            significa adicionar um elemento ao final da fila.
+          </p>
+        </ion-row>
+        <ion-row>
+          <p>
+            Da mesma forma, <code>"dequeue"</code> (ou desenfileirar)
+            significa remover o elemento que está no início da fila.
+          </p>
+        </ion-row>
+      </ion-grid>
+    </div>
+    <ion-button routerLink="/insertion-sort"> Próximo </ion-button>
   </section>
 </ion-content>
