@@ -43,6 +43,14 @@ const routes: Routes = [
     path: 'bubble-sort',
     loadChildren: () => import('./bubble-sort/bubble-sort.module').then(m => m.BubbleSortPageModule)
   },
+  {
+    path: 'login',
+    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
+  },
+  {
+    path: 'cadastro',
+    loadChildren: () => import('./cadastro/cadastro.module').then( m => m.CadastroPageModule)
+  },
 ];
 
 @NgModule({

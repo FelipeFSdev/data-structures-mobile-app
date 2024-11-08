@@ -1,0 +1,29 @@
+ion-content {
+  --background: #121212;
+  --ion-color-primary: #DAA520; /* Dourado */
+}
+
+ion-img {
+  max-width: 200px;
+  display: block;
+  margin: 0 auto;
+}
+
+#image{
+  padding: 3rem 0 1.25rem 0 ;
+}
+
+.login-label{
+  padding-top: 2rem;
+  margin: 1rem;
+}
+
+.login-label2{
+  padding-top: 2rem;
+  margin-top: 1rem;
+}
+
+ion-button{
+  font-size: 1em;
+  padding: 0.25rem
+}
