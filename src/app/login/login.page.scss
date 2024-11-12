@@ -1,6 +1,6 @@
 ion-content {
-  --background: #121212;
-  --ion-color-primary: #DAA520; /* Dourado */
+  --background: #f5b7a3;
+  --ion-color-primary: #f7c65e; /* Dourado */
 }
 
 ion-img {
@@ -14,13 +14,15 @@ ion-img {
 }
 
 .login-label{
-  padding-top: 2rem;
+  padding: 1rem 2rem 0 1rem;
   margin: 1rem;
+  width: 70%;
 }
 
 .login-label2{
   padding-top: 2rem;
-  margin-top: 1rem;
+  margin: 1rem;
+  width: 70%;
 }
 
 ion-button{
