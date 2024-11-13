@@ -15,15 +15,30 @@ export class CadastroPage {
   });
 
   onSubmit() {
+    const emailIn = document.getElementById("emailIn") as HTMLIonInputElement
+    const emailValue = emailIn.value
+    const senhaIn = document.getElementById("passIn") as HTMLIonInputElement
+    const senhaValue = senhaIn.value
+    const confirmSenhaIn = document.getElementById("confirmPassIn") as HTMLIonInputElement
+    const confirmSenhaValue = confirmSenhaIn.value
+
+    if (emailValue && senhaValue && confirmSenhaValue) {
+      this.cadastroForm.setValue({
+        email: emailValue.toString(),
+        senha: senhaValue.toString(),
+        confirmaSenha: confirmSenhaValue.toString()
+      })
+    }
+
     if (this.cadastroForm.valid) {
       const { email, senha } = this.cadastroForm.value;
-
       // Armazenando os dados no localStorage
       localStorage.setItem('usuario', JSON.stringify({ email, senha }));
 
-      console.log('Usuário cadastrado com sucesso e armazenado no localStorage');
+      return alert("Usuário cadastrado com sucesso!")
+
     } else {
-      console.error('Formulário inválido');
+      return alert("Usuário não cadastrado. Confirme o preenchimento correto de todos os campos")
     }
   }
 
