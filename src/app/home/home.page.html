@@ -7,6 +7,11 @@
   <ion-content class="ion-padding">
     <div class="side-menu">
       <ion-row>
+        <ion-col *ngIf="user" size="auto">
+            <p>Bem vindo!{{user.name}}</p>
+        </ion-col>
+      </ion-row>
+      <ion-row>
         <ion-col size="auto">
           <p>Choose your theme:</p>
         </ion-col>
