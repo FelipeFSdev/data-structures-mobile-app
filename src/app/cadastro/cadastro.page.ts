@@ -14,4 +14,17 @@ export class CadastroPage {
     confirmaSenha: new FormControl('', Validators.required)
   });
 
+  onSubmit() {
+    if (this.cadastroForm.valid) {
+      const { email, senha } = this.cadastroForm.value;
+
+      // Armazenando os dados no localStorage
+      localStorage.setItem('usuario', JSON.stringify({ email, senha }));
+
+      console.log('Usuário cadastrado com sucesso e armazenado no localStorage');
+    } else {
+      console.error('Formulário inválido');
+    }
+  }
+
 }
