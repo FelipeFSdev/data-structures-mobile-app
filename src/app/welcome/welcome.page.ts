@@ -10,6 +10,7 @@ export class WelcomePage implements OnInit {
 
   ngOnInit() {
     this.createLocalColorTheme();
+    this.createLocalUser();
   }
 
   public createLocalColorTheme(): void {
@@ -18,5 +19,9 @@ export class WelcomePage implements OnInit {
     colorTheme
       ? document.body.setAttribute("color-theme", colorTheme)
       : document.body.setAttribute("color-theme", "");
+  }
+
+  public createLocalUser(): void {
+    localStorage.setItem("usuario", JSON.stringify({}))
   }
 }
