@@ -48,8 +48,22 @@ export class LoginPage implements OnInit {
     }
   }
   async signIn() {
-    let googleUser = await GoogleAuth.signIn();
-    this.user = googleUser;
+    try {
+      const googleUser = await GoogleAuth.signIn();
+      this.user = googleUser;
+      
+      // Armazena o usuário no localStorage (caso você queira persistir os dados)
+      localStorage.setItem('usuario', JSON.stringify({
+        email: googleUser.email,
+        senha: 'senha_gerada_ou_em_branco',  // O Google não fornece senha
+      }));
+
+      // Redireciona para a página home após login com o Google
+      this.router.navigate(['/home']);
+    } catch (error) {
+      console.error('Erro ao fazer login com o Google:', error);
+      alert('Erro ao tentar fazer login com o Google. Tente novamente.');
+    }
   }
 
   async singOut(){
