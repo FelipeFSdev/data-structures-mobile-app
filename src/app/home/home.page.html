@@ -8,7 +8,7 @@
     <div class="side-menu">
       <ion-row>
         <ion-col *ngIf="user" size="auto">
-            <p>Bem vindo!{{user.name}}</p>
+          <p>Bem vindo!{{user.name}}</p>
         </ion-col>
       </ion-row>
       <ion-row>
@@ -28,7 +28,7 @@
         </ion-col>
         <ion-col>
           <div>
-            <ion-select placeholder="Select" value="en-us" (ionChange)="changeLanguage($event)">
+            <ion-select placeholder="Select" value="pt-br" (ionChange)="changeLanguage($event)">
               <ion-select-option value="pt-br"> Português - BR </ion-select-option>
               <ion-select-option value="en-us"> English - US </ion-select-option>
             </ion-select>
