@@ -1,14 +1,17 @@
 .welcome-message {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
   text-align: center;
   background-color: #f5b7a3;
   height: 100%;
   align-content: center;
-  color: #000000;
+  color: #000;
 }
 
 .welcome-message h1 {
   font-weight: bold;
-  margin: 0 1rem;
+  margin-top: 3rem;
 }
 
 .welcome-message p {
@@ -18,8 +21,19 @@
 
 .welcome-message .welcome-button {
   font-weight: bolder;
+  width: 10rem;
+  margin: 10px auto;
   --border-radius: .65rem;
   --padding: .8rem;
   --background: #f7845e;
   --color: #000;
+}
+
+.welcome-message ion-img {
+  max-width: 200px;
+  margin: 80px auto;
+}
+
+#image {
+  padding: 3rem 0 1.25rem 0;
 }
