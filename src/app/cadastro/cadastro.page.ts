@@ -21,7 +21,6 @@ export class CadastroPage {
     const senhaValue = senhaIn.value
     const confirmSenhaIn = document.getElementById("confirmPassIn") as HTMLIonInputElement
     const confirmSenhaValue = confirmSenhaIn.value
-    const usuarios = [{}]
 
     if (emailValue && senhaValue && confirmSenhaValue) {
       this.cadastroForm.setValue({
@@ -32,6 +31,7 @@ export class CadastroPage {
     }
 
     if (this.cadastroForm.valid) {
+      const usuarios = JSON.parse (localStorage.getItem('usuario') || '[]');
       const { email, senha } = this.cadastroForm.value;
       usuarios.push({ email, senha })
       // Armazenando os dados no localStorage
