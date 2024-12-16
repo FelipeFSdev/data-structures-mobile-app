@@ -15,24 +15,12 @@
   </ion-header>
   <section class="page-content">
     <ion-icon name="dice" size="large"></ion-icon>
-    <h1> Data Structures </h1>
+    <h1> {{getTitle()}} </h1>
     <p>
-      Branch of study that is responsible for studying how data is
-      organized in a computer to atend every different process request
-      and make it more efficient.
-    </p>
-    <p>
-      Data structures define how all data is accessed, its organization
-      and processing options, sharing and relating available data.
-    </p>
-    <p>
-      If we have the same data type on one structure, we can call it as
-      "homogeneous". As example, we have "vectors" and "matrices", or,
-      bringing it to the real world, a bookshelf.
+      {{getContent()}}
     </p>
     <figure>
-      <img src="https://stecine.azureedge.net/repositorio/estruturas_dados_heterogeneas_v2/img/img_13.jpg"
-        alt="Image showing how a bookshelf uses vectors and matrices" />
+      <img src={{getImage()}} alt="Image showing how a bookshelf uses vectors and matrices" />
     </figure>
     <p>
       Conversely, heterogeneous structures have different data types,

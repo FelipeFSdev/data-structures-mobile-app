@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PageService } from '../service/page.service';
 
 @Component({
   selector: 'app-bubble-sort',
@@ -8,20 +9,39 @@ import { Component, OnInit } from '@angular/core';
 export class BubbleSortPage implements OnInit {
   private list: Array<number> = [83, 14, 55, 9, 23, 7];
   private isSorting: boolean = false;
-  constructor() { }
+  private title: string = "Bubble Sort";
+  private content: string = "";
+  constructor(private pageService: PageService) { }
 
   ngOnInit() {
+    this.setContent();
     const theme: string | null = localStorage.getItem("color-theme");
     theme
       ? document.body.setAttribute("color-theme", theme)
       : document.body.setAttribute("color-theme", "light");
   }
 
+  public getContent(): string {
+    return this.content;
+  }
+  public getTitle(): string {
+    return this.title;
+  }
   public getList(): Array<number> {
     return this.list;
   }
   public getIsSorting(): boolean {
     return this.isSorting;
+  }
+
+  public async setContent(): Promise<any> {
+    try {
+      const data = await this.pageService.getPage(this.title);
+      this.content = data[0].content;
+    }
+    catch (error) {
+      return error
+    }
   }
 
   public delay(milisseconds: number): Promise<any> {

@@ -15,17 +15,9 @@
   </ion-header>
   <section class="page-content">
     <ion-icon name="link-outline" size="large"></ion-icon>
-    <h1> Singly Linked Lists </h1>
+    <h1> {{getTitle()}} </h1>
     <p>
-      Imagine a queue. In this queue, each person has their own
-      characteristics (data) and a coordinate to represent their
-      positions. The coordenate is unknown, so they hold each
-      other's hands, this is a <code>"pointer"</code> to their location.
-    </p>
-    <p>
-      Knowing the pointer, turns up possible to rearrange the nodes
-      (person) of the queue easily. It's great for situations where
-      you need to add or remove elements often.
+      {{getContent()}}
     </p>
     <div class="linked-list-visualization">
       <ion-grid>

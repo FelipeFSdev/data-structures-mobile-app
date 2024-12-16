@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PageService } from '../service/page.service';
 
 @Component({
   selector: 'app-stacks',
@@ -6,12 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./stacks.page.scss'],
 })
 export class StacksPage implements OnInit {
-  private stack: Array<number> = []
+  private stack: Array<number> = [];
   private newElement: number = 0;
+  private title: string = "Stacks";
+  private content: string = "";
 
-  constructor() { }
+  constructor(private pageService: PageService) { }
 
   ngOnInit() {
+    this.setContent();
     const theme: string | null = localStorage.getItem("color-theme");
     theme
       ? document.body.setAttribute("color-theme", theme)
@@ -20,6 +24,21 @@ export class StacksPage implements OnInit {
 
   public getStack(): Array<number> {
     return this.stack;
+  }
+  public getTitle(): string {
+    return this.title;
+  }
+  public getContent(): string {
+    return this.content;
+  }
+
+  public async setContent(): Promise<any> {
+    try {
+      const data = await this.pageService.getPage(this.title);
+      this.content = data[0].content;
+    } catch (error) {
+      return error
+    }
   }
 
   public addElement(): Array<number> {

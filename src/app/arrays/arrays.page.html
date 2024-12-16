@@ -15,16 +15,9 @@
   </ion-header>
   <section class="page-content">
     <ion-icon name="file-tray-stacked-outline" size="large"></ion-icon>
-    <h1> Arrays </h1>
+    <h1> {{getTitle()}} </h1>
     <p>
-      We can think of arrays as a jar or a box for storing some
-      different items (pieces of data) occupying only one place
-      in the shelf (computer memory).
-    </p>
-    <p>
-      Each programming language has its own way of declaring an
-      array, but they all work as the same way: like a queue that
-      its first index start at 0.
+      {{getContent()}}
     </p>
     <div class="array-visualization">
       <ion-grid [fixed]="true">

@@ -15,15 +15,9 @@
   </ion-header>
   <section class="page-content">
     <ion-icon name="swap-horizontal-outline" size="large"></ion-icon>
-    <h1> Queues </h1>
+    <h1> {{getTitle()}} </h1>
     <p>
-      This type of structure is something like a line of people waiting to
-      order something in a coffee shop. The first person in line is the
-      first to get served.
-    </p>
-    <p>
-      Queues are useful to process data in the order they were added, following
-      the FIFO (First-In-First-Out) principle.
+      {{getContent()}}
     </p>
     <div class="queue-visualization">
       <ion-grid [fixed]="true">

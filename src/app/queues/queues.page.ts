@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PageService } from '../service/page.service';
 
 @Component({
   selector: 'app-queues',
@@ -8,18 +9,35 @@ import { Component, OnInit } from '@angular/core';
 export class QueuesPage implements OnInit {
   private queue: Array<number> = [1];
   private newElement: number = 1;
+  private title: string = "Queues";
+  private content: string = "";
 
-  constructor() { }
+  constructor(private pageService: PageService) { }
 
   ngOnInit() {
+    this.setContent();
     const theme: string | null = localStorage.getItem("color-theme");
     theme
       ? document.body.setAttribute("color-theme", theme)
       : document.body.setAttribute("color-theme", "light");
   }
-
+  public getTitle(): string {
+    return this.title;
+  }
+  public getContent(): string {
+    return this.content;
+  }
   public getQueue(): Array<number> {
     return this.queue;
+  }
+
+  public async setContent(): Promise<any> {
+    try {
+      const data = await this.pageService.getPage(this.title);
+      this.content = data[0].content;
+    } catch (error) {
+      return error
+    }
   }
 
   public enqueue(): Array<number> {

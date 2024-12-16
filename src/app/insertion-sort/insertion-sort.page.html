@@ -15,17 +15,9 @@
   </ion-header>
   <section class="page-content">
     <ion-icon name="archive-outline" size="large"></ion-icon>
-    <h1> Insertion Sort </h1>
+    <h1> {{getTitle()}} </h1>
     <p>
-      When we talk about ordination, we try to order a
-      sequence of data in descending or ascending direction.
-    </p>
-    <p>
-      Imagine you're holding one deck of cards in one hand and
-      you want to sort them into your other hand. You start with
-      one card, considering it sorted. Then, you take the next
-      card and insert it into the correct position relative to
-      the first one, so they are sorted together.
+      {{getContent()}}
     </p>
     <div>
       <ion-grid [fixed]="true">

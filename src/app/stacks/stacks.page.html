@@ -15,16 +15,9 @@
   </ion-header>
   <section class="page-content">
     <ion-icon name="layers-outline" size="large"></ion-icon>
-    <h1> Stacks </h1>
+    <h1> {{getTitle()}} </h1>
     <p>
-      Stacks are a specific list type that follows the
-      LIFO (Last-In-First-Out) principle, which means each
-      interaction with this structure is done from the top
-      to the bottom of the stack, just like a stack of books.
-    </p>
-    <p>
-      Useful when you need to reverse things or look at the
-      most recent addition first.
+      {{getContent()}}
     </p>
     <div class="stack-visualization">
       <ion-grid>

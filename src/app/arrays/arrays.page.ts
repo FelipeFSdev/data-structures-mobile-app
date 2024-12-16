@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PageService } from '../service/page.service';
 
 @Component({
   selector: 'app-arrays',
@@ -7,14 +8,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ArraysPage implements OnInit {
   private array: Array<number> = [12, 7];
+  private title: string = "Arrays";
+  private content: string = "";
 
-  constructor() { }
+  constructor(private pageService: PageService) { }
 
   ngOnInit() {
-    const theme: string | null = localStorage.getItem("color-theme");
+    this.setContent();
+    const theme: string = localStorage.getItem("color-theme")!;
     theme
       ? document.body.setAttribute("color-theme", theme)
       : document.body.setAttribute("color-theme", "light");
+  }
+
+  public getContent(): string {
+    return this.content
+  }
+
+
+  public getTitle(): string {
+    return this.title
   }
 
   public getArray(): Array<number> {
@@ -41,6 +54,15 @@ export class ArraysPage implements OnInit {
       return lang;
     } else {
       return "";
+    }
+  }
+
+  public async setContent(): Promise<any> {
+    try {
+      const data = await this.pageService.getPage(this.title);
+      this.content = data[0].content;
+    } catch (error) {
+      return error
     }
   }
 }
