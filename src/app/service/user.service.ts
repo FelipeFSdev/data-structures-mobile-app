@@ -6,7 +6,7 @@ import axios from 'axios';
 })
 
 export class UserService {
-  private baseApiUrl: string = "http://localhost:8000/user";
+  private baseApiUrl: string = "https://data-structures-mobile-app-backend-felipefsdevs-projects.vercel.app/";
   constructor() { }
 
   public async createUser(user: {

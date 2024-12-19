@@ -5,7 +5,7 @@ import axios from 'axios';
   providedIn: 'root'
 })
 export class LoginService {
-  private baseApiUrl = "http://localhost:8000";
+  private baseApiUrl = "https://data-structures-mobile-app-backend-felipefsdevs-projects.vercel.app/";
   private token: string = "";
 
   constructor() { }

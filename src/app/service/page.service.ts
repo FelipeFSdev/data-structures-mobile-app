@@ -6,7 +6,7 @@ import { LoginService } from './login.service';
   providedIn: 'root'
 })
 export class PageService {
-  private baseApiUrl: string = "http://localhost:8000/page"
+  private baseApiUrl: string = "https://data-structures-mobile-app-backend-felipefsdevs-projects.vercel.app/"
   constructor(private loginService: LoginService) { }
 
   public async getPage(title: string) {
