@@ -10,23 +10,13 @@ import { UserService } from '../service/user.service';
 })
 export class CadastroPage {
   cadastroForm = new FormGroup({
-    email: new FormControl('', [Validators.required, Validators.email]),
-    senha: new FormControl('', [Validators.required, Validators.minLength(6)]),
-    confirmaSenha: new FormControl('', Validators.required)
+    email: new FormControl("", [Validators.required, Validators.email]),
+    senha: new FormControl("", [Validators.required, Validators.minLength(6)]),
+    confirmaSenha: new FormControl("", Validators.required)
   });
   constructor(private userService: UserService) { }
 
-  async createUser(): Promise<any> {
-    const emailIn = document.getElementById("emailIn") as HTMLIonInputElement;
-    const email = emailIn.value;
-    const passIn = document.getElementById("passIn") as HTMLIonInputElement;
-    const password = passIn.value;
-    const newUser = { name: "qualquer", email, password }
-
-    return await this.userService.createUser(newUser)
-  }
-
-  onSubmit() {
+  public onSubmit() {
     const emailIn = document.getElementById("emailIn") as HTMLIonInputElement
     const emailValue = emailIn.value
     const senhaIn = document.getElementById("passIn") as HTMLIonInputElement
@@ -41,18 +31,25 @@ export class CadastroPage {
         confirmaSenha: confirmSenhaValue.toString()
       })
     }
+    this.createUser();
+  }
 
-    if (this.cadastroForm.valid) {
-      const usuarios = JSON.parse(localStorage.getItem('usuario') || '[]');
-      const { email, senha } = this.cadastroForm.value;
-      usuarios.push({ email, senha })
-      // Armazenando os dados no localStorage
-      localStorage.setItem('usuario', JSON.stringify(usuarios));
+  public async createUser(): Promise<any> {
+    try {
+      const emailIn = document.getElementById("emailIn") as HTMLIonInputElement;
+      const email = emailIn.value;
+      const passIn = document.getElementById("passIn") as HTMLIonInputElement;
+      const password = passIn.value;
+      const newUser = { name: "null", email, password }
 
-      return alert("Usuário cadastrado com sucesso!")
+      if (email === "") {
+        return alert("User is not registered. Make sure you have filled all fields correctly.")
+      }
 
-    } else {
-      return alert("Usuário não cadastrado. Confirme o preenchimento correto de todos os campos")
+      return await this.userService.createUser(newUser);
+
+    } catch (error) {
+      return error
     }
   }
 

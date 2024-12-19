@@ -21,7 +21,6 @@ export class UserService {
         url: `${this.baseApiUrl}/create`,
         data: user
       })
-
       return res.data
 
     } catch (error) {

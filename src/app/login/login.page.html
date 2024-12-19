@@ -1,20 +1,18 @@
 <ion-content class="ion-padding">
-  <ion-img src="/assets/datas.png" id="image" class="ion-margin-vertical"></ion-img> 
-  
-  
- <div>
-    <div id="email">
-      <ion-label  position="floating">Email</ion-label>
-      <ion-input [(ngModel)]="email" class="login-label" type="email" required></ion-input>
-    </div> 
-      <ion-label  position="floating">Senha</ion-label>
-      <ion-input [(ngModel)]="senha" class="login-label2" type="password" required></ion-input>
- 
+  <ion-img src="/assets/datas.png" id="image" class="ion-margin-vertical"></ion-img>
+
+
+  <div>
+    <div>
+      <ion-label position="floating">Email</ion-label>
+      <ion-input id="emailIn" class="login-label" type="email" required></ion-input>
+    </div>
+    <ion-label position="floating">Senha</ion-label>
+    <ion-input id="passwordIn" class="login-label2" type="password" required></ion-input>
+
   </div>
 
 
-  <ion-button (click)="login()" expand="block" color="primary"  >Acesso</ion-button>
-
-  <ion-button  expand="block" color="light" *ngIf="!user" (click)="signIn()" >Login com: <ion-icon slot="end" name="logo-google"></ion-icon></ion-button>
-  <ion-button  expand="block" color="light"  routerLink="/cadastro" >Cadastrar-se</ion-button>
+  <ion-button (click)="getToken()" expand="block" color="primary">Acesso</ion-button>
+  <ion-button expand="block" color="light" routerLink="/cadastro">Cadastrar-se</ion-button>
 </ion-content>
