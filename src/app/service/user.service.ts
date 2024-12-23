@@ -18,7 +18,7 @@ export class UserService {
     try {
       const res = await axios({
         method: "post",
-        url: `${this.baseApiUrl}/create`,
+        url: `https://cors-anywhere.herokuapp.com/${this.baseApiUrl}/create`,
         data: user
       })
       return res.data

@@ -13,7 +13,7 @@ export class PageService {
     try {
       const res = await axios({
         method: "get",
-        url: `${this.baseApiUrl}/${title}`,
+        url: `https://cors-anywhere.herokuapp.com/${this.baseApiUrl}/${title}`,
         headers: { Authorization: `Bearer ${this.loginService.getToken()}` }
       })
 

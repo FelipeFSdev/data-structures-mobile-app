@@ -17,7 +17,7 @@ export class LoginService {
     try {
       const res = await axios({
         method: "post",
-        url: `${this.baseApiUrl}/login`,
+        url: `https://cors-anywhere.herokuapp.com/${this.baseApiUrl}/login`,
         data: user
       });
       res.data.token ? this.setToken(res.data.token) : "";
